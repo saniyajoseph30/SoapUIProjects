@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="095fdd34-2f40-470d-945c-fb39ebe7c2bb" activeEnvironment="Default" name="REST-POST" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="37e56173-8389-41f9-8482-64c579931069" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://reqres.in" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="CreateWadlDocumentationAction@report-directory">C:\Users\saniya.joseph\Documents</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://reqres.in</con:endpoint></con:endpoints><con:resource name="Users" path="/api/users" id="0b370afd-620e-449e-9eb9-f6f4f907f3b0"><con:settings/><con:parameters/><con:method name="Users 1" id="cead6d65-b65f-4f17-8ec6-f78bd63512e6" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:user="https://reqres.in/api/users">user:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="c436af32-a57d-4b6a-9509-0cb5a6ee82a8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "name": "Amber",
+    "job": "Designer",
+    "Designation": "Regional Intranet Consultant",
+    "Location": "London"
+}</con:request><con:originalUri>https://reqres.in/api/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="fad01462-a717-45b7-ad5b-52392d8d377d" name="Random Values TestSuite"><con:description>TestSuite generated for REST Service [https://reqres.in]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3200dee3-176d-467e-bff5-7856cbf2dd62" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="https://reqres.in TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Users" id="b103ae21-ec2a-4acf-908c-4feaafbd1ee4"><con:settings/><con:config service="https://reqres.in" resourcePath="/api/users" methodName="Users 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Users" id="c436af32-a57d-4b6a-9509-0cb5a6ee82a8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "name": "${=org.apache.commons.lang.RandomStringUtils.randomAlphabetic(20)}",
+    "job": "${=org.apache.commons.lang.RandomStringUtils.randomAlphabetic(15)}",
+    "Designation": "${=org.apache.commons.lang.RandomStringUtils.randomAlphabetic(10)}",
+    "Location": "${=org.apache.commons.lang.RandomStringUtils.randomAlphabetic(5)}"
+}</con:request><con:originalUri>https://reqres.in/api/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="81278041-b875-4dd0-86b5-8c11aa31f76d" name="Groovy Script TestSuite"><con:description>TestSuite generated for REST Service [https://reqres.in]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="2ed8ea1a-3c10-4704-bba5-09e9134add16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Groovy Script TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="POST-Create Users" id="967c0b3b-8e89-4830-bac6-5e49de8d07c4" disabled="true"><con:settings/><con:config service="https://reqres.in" resourcePath="/api/users" methodName="Users 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST-Create Users" id="c436af32-a57d-4b6a-9509-0cb5a6ee82a8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "name": "${Properties#Name}",
+    "job": "${Properties#Job}",
+    "Designation": "${Properties#Designation}",
+    "Location": "${Properties#Location}"
+}</con:request><con:originalUri>https://reqres.in/api/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="properties" name="Properties" id="432cf4be-20b7-49cb-8e17-bed865cea8a0"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Name</con:name><con:value>Jim Ritchie</con:value></con:property><con:property><con:name>Job</con:name><con:value>Orchestrator</con:value></con:property><con:property><con:name>Designation</con:name><con:value>Legacy Intranet Coordinator</con:value></con:property><con:property><con:name>Location</con:name><con:value>3273 Langosh Camp</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="19384ca9-252d-4362-948c-45eac5491723"><con:settings/><con:config><script>import groovy.util.*
+import groovy.json.JsonSlurper
+
+def groovyUtils=new com.eviware.soapui.support.GroovyUtils(context)
+def projectDir=groovyUtils.projectPath
+
+File file = new File(projectDir)
+
+def firstLevelDir=file.getParent()
+log.info firstLevelDir
+
+def filePath=firstLevelDir+"\\Documents\\TestData from CSV File_postman.csv"
+log.info filePath
+
+context.fileReader=new BufferedReader(new FileReader(filePath))
+rows=context.fileReader.readLines()
+
+int n=rows.size()
+for(int i=1;i&lt;n;i++)
+{
+	row=rows[i]
+	String[] data=row.split(",")	
+	
+testRunner.testCase.getTestStepByName("Properties").setPropertyValue("Name",data[0])
+testRunner.testCase.getTestStepByName("Properties").setPropertyValue("Job",data[1])
+testRunner.testCase.getTestStepByName("Properties").setPropertyValue("Designation",data[2])
+testRunner.testCase.getTestStepByName("Properties").setPropertyValue("Location",data[3])
+
+testRunner.runTestStepByName("POST-Create Users")
+
+
+res=context.expand('${POST-Create Users#Response}')
+obj= new JsonSlurper().parseText(res)
+log.info obj
+
+assert obj.name==data[0]
+assert obj.job==data[1]
+assert obj.Designation==data[2]
+assert obj.Location==data[3]
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
